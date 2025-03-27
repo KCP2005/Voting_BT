@@ -1,15 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Web3Provider } from './context/Web3Context';
+import { Web3Provider } from './context/web3context';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import Register from './pages/Register'; // Changed from './pages/register' to './pages/Register'
+import Register from './pages/Register';
 import Vote from './pages/Vote';
 import Results from './pages/Results';
 import Admin from './pages/Admin';
 import HostVoting from './pages/HostVoting';
 import './App.css';
-import Notifications from './components/Notifications';
 
 function App() {
   return (
@@ -27,7 +26,6 @@ function App() {
               <Route path="/host" element={<HostVoting />} />
             </Routes>
           </div>
-          <Notifications />
         </div>
       </Router>
     </Web3Provider>
