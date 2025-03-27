@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-const votingSessionSchema = new mongoose.Schema({
+// Add these fields to your existing VotingSession model
+const VotingSessionSchema = new mongoose.Schema({
   hostAddress: {
     type: String,
     required: true,
@@ -40,6 +41,36 @@ const votingSessionSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now
+  },
+  // Add these new fields
+  blockchainId: {
+    type: String,
+    default: null
+  },
+  blockchainTxHash: {
+    type: String,
+    default: null
+  }
+});
+
+// Add txHash field to the Vote schema in your VotingSession model
+
+const VoteSchema = new mongoose.Schema({
+  voter: {
+    type: String,
+    required: true
+  },
+  candidate: {
+    type: String,
+    required: true
+  },
+  timestamp: {
+    type: Date,
+    default: Date.now
+  },
+  txHash: {
+    type: String,
+    default: null
   }
 });
 

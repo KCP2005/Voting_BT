@@ -127,7 +127,7 @@ const HostVoting = () => {
       fetchMySessions();
       fetchRegisteredUsers();
     }
-  }, [account]); // Add fetchMySessions to dependency array
+  }, [account, fetchMySessions]); // Add fetchMySessions to dependency array
 
   const fetchMySessions = async () => {
     try {
